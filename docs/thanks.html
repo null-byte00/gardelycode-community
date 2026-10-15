@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thanks for downloading GardelyCode</title>
+<meta name="description" content="Your GardelyCode download is starting. Install it, open a folder, describe what you want." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg0:#0b100d; --bg1:#101612; --bg2:#151d18; --bg3:#1c261f; --line:#243027; --t1:#e4eae1; --t2:#9fab9f; --t3:#6a7669; --acc:#a3c3a3; --acc2:#7fa883; --ink:#0d1710; --lichen:#c9b88c; }
+  :root[data-theme="light"] { --bg0:#f3f1ea; --bg1:#f8f6f0; --bg2:#ffffff; --bg3:#eceae1; --line:#d6dbcf; --t1:#1b241d; --t2:#4d5a4f; --t3:#7b867b; --acc:#4f8a60; --acc2:#3e7350; --ink:#f8f6f0; --lichen:#8a7440; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: radial-gradient(900px 500px at 50% 0%, color-mix(in srgb, var(--acc) 14%, transparent), transparent 70%), var(--bg0); color: var(--t1); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  a { color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 16px 64px; text-align: center; }
+  .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 18px; }
+  h1 { font: italic 600 clamp(34px, 6vw, 54px)/1.05 Fraunces, Georgia, serif; margin: 34px 0 10px; letter-spacing: -.01em; }
+  h1 em { color: var(--acc); }
+  .lead { color: var(--t2); font-size: 18px; margin: 0 auto 26px; max-width: 560px; }
+  .note { color: var(--t3); font-size: 14px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 600; text-decoration: none; border: 1px solid var(--line); background: var(--bg2); color: var(--t1); cursor: pointer; font-size: 16px; }
+  .btn-primary { background: var(--acc); color: var(--ink); border-color: transparent; }
+  .btn:hover { transform: translateY(-1px); }
+  .star { margin: 34px auto 0; padding: 26px 22px; border: 1px solid var(--line); border-radius: 22px; background: var(--bg1); max-width: 560px; }
+  .star h2 { margin: 0 0 6px; font-size: 21px; }
+  .star p { margin: 0 0 18px; color: var(--t2); }
+  .count { font-variant-numeric: tabular-nums; color: var(--t2); font-weight: 500; }
+  .steps { text-align: left; margin: 34px auto 0; max-width: 560px; display: grid; gap: 10px; }
+  .step { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: 16px; background: var(--bg2); border: 1px solid var(--line); }
+  .step b { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--bg3); color: var(--acc); font-size: 14px; }
+  .step span { color: var(--t2); }
+  .step strong { color: var(--t1); font-weight: 600; }
+  .social { margin-top: 30px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .social .btn[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+  footer { margin-top: 42px; color: var(--t3); font-size: 13px; }
+  @media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }
+</style>
+<script>
+  (function () { try { var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('gc-theme'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {} })();
+</script>
+</head>
+<body>
+<div class="wrap">
+  <a class="logo" href="./">
+    <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#a3c3a3"/><g fill="#0d1710" stroke="#0d1710" stroke-width="2.6" stroke-linecap="round"><path d="M16 27V14" fill="none"/><path d="M16 19c0-5-3.5-8.5-9-8.5 0 5.5 3.5 8.5 9 8.5z" stroke="none"/><path d="M16 15c0-5.5 3.8-9.5 9.5-9.5 0 6-3.8 9.5-9.5 9.5z" stroke="none"/></g></svg>
+    GardelyCode
+  </a>
+
+  <h1>Your download is <em>growing</em>.</h1>
+  <p class="lead">GardelyCode should start downloading in a moment. If it doesn't, use the button below.</p>
+  <a class="btn btn-primary" id="dl" href="#">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+    Download GardelyCode
+  </a>
+  <p class="note">Free · Windows 10/11 · Windows may say “Windows protected your PC” — click <em>More info → Run anyway</em>.</p>
+
+  <section class="star" aria-labelledby="star-h">
+    <h2 id="star-h">⭐ Enjoying the idea? Give us a star</h2>
+    <p>A GitHub star takes one click and helps more people find GardelyCode. It's the best way to say thanks.</p>
+    <a class="btn btn-primary" href="https://github.com/null-byte00/gardelycode-community" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>
+      Star on GitHub <span class="count" id="stars"></span>
+    </a>
+  </section>
+
+  <div class="steps">
+    <div class="step"><b>1</b><span><strong>Install</strong> — run the downloaded file. It takes a few seconds.</span></div>
+    <div class="step"><b>2</b><span><strong>Open a folder</strong> — an empty one is perfect for a new project.</span></div>
+    <div class="step"><b>3</b><span><strong>Describe what you want</strong> — “Make a snake game with a high score.” Watch it grow.</span></div>
+  </div>
+
+  <div class="social">
+    <a class="btn" data-todo="link" aria-disabled="true" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+    <a class="btn" data-todo="link" aria-disabled="true" href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a>
+    <a class="btn" href="./#faq">FAQ</a>
+  </div>
+
+  <footer>© 2026 GardelyCode · <a href="privacy.html">Privacy</a></footer>
+</div>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var src = (q.get('src') || 'site').replace(/[^a-z0-9_-]/gi, '').slice(0, 24);
+  var ref = (q.get('ref') || (function () { try { return sessionStorage.getItem('gc-ref'); } catch (e) { return null; } })() || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 16);
+  var dl = document.getElementById('dl');
+  var ownSite = location.hostname === 'gardelycode.com' || location.hostname === 'www.gardelycode.com';
+  function start(url) {
+    dl.href = url;
+    if (q.get('auto') !== '0') setTimeout(function () { location.href = url; }, 700);
+  }
+  function comingSoon() {
+    document.querySelector('h1').innerHTML = 'The first release is <em>almost ready</em>.';
+    document.querySelector('.lead').textContent = 'GardelyCode is in final testing. Star the repo or join our channels to get it the day it ships.';
+    dl.style.display = 'none';
+    document.querySelector('.note').style.display = 'none';
+  }
+  if (ownSite) {
+    // Our server streams the installer from /download (no .exe in the URL) and counts the download.
+    start('/download?src=' + encodeURIComponent(src) + (ref ? '&ref=' + encodeURIComponent(ref) : ''));
+  } else {
+    // GitHub Pages mirror: only link to a release that actually exists.
+    fetch('https://api.github.com/repos/null-byte00/gardelycode-community/releases/latest')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rel) {
+        var asset = rel && (rel.assets || []).filter(function (a) { return /setup\.exe$/i.test(a.name); })[0];
+        if (asset) start(asset.browser_download_url); else comingSoon();
+      })
+      .catch(comingSoon);
+  }
+  fetch('https://api.github.com/repos/null-byte00/gardelycode-community').then(function (r) { return r.json(); }).then(function (j) {
+    if (typeof j.stargazers_count === 'number') document.getElementById('stars').textContent = '· ' + j.stargazers_count;
+  }).catch(function () {});
+})();
+</script>
+</body>
+</html>

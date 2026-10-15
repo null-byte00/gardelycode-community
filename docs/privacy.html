@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy — GardelyCode</title>
+<meta name="description" content="What GardelyCode collects (very little), what it never collects, and how to turn stats off." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<style>
+  :root { --bg0:#0b100d; --bg2:#151d18; --line:#243027; --t1:#e4eae1; --t2:#9fab9f; --acc:#a3c3a3; }
+  body { margin: 0; background: var(--bg0); color: var(--t1); font: 16px/1.7 Inter, "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+  a { color: var(--acc); }
+  h1 { font: italic 600 40px/1.1 Georgia, serif; margin: 0 0 6px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; }
+  p, li { color: var(--t2); }
+  strong { color: var(--t1); }
+  .box { background: var(--bg2); border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; }
+</style>
+</head>
+<body>
+<main>
+  <p><a href="./">← GardelyCode</a></p>
+  <h1>Privacy</h1>
+  <p>Last updated: October 13, 2026</p>
+
+  <div class="box">
+    <p><strong>Short version:</strong> your files stay on your computer. To answer you, the messages you type and the code the agent works on are sent to the AI providers that power Gardely AI. The app sends a tiny anonymous “I was opened” signal so we can count users — you can turn it off.</p>
+  </div>
+
+  <h2>1. AI requests</h2>
+  <p>When you ask Gardely to do something, your message, the project context the agent reads (for example the content of files it opens) and its tool results are sent to third-party AI inference providers to generate the answer. Don't paste passwords, API keys or other secrets into the chat. Providers may keep request logs according to their own policies; free tiers may use prompts to improve their models.</p>
+
+  <h2>2. Anonymous usage stats (optional)</h2>
+  <p>If “Share anonymous usage stats” is on (Settings → General → Privacy), the app sends:</p>
+  <ul>
+    <li>a <strong>random install ID</strong> created on your computer (not linked to your name, email or account);</li>
+    <li>the <strong>app version</strong> and <strong>operating system name</strong>;</li>
+    <li><strong>event names</strong> such as “app opened”, “shared”, “task finished”.</li>
+  </ul>
+  <p>We never send file names, file contents, prompts, code, paths or anything you type. Turn it off any time in Settings — nothing is sent after that.</p>
+
+  <h2>3. Website and downloads</h2>
+  <p>When you download GardelyCode from gardelycode.com we count the download and where it came from (for example “YouTube”). To count unique downloads per day we use a one-way hash of your IP address and browser with a salt that changes every day and is never stored — we cannot recover your IP address from it. We do not use cookies or third-party trackers.</p>
+
+  <h2>4. Updates</h2>
+  <p>The app checks gardelycode.com (and GitHub as a fallback) for new versions. Updates are cryptographically signed; the app refuses anything without our signature.</p>
+
+  <h2>5. Your choices</h2>
+  <ul>
+    <li>Turn off stats in Settings → General → Privacy.</li>
+    <li>Delete the app's data folder (Settings → About → Open data folder) to remove your chat history and install ID.</li>
+  </ul>
+
+  <h2>6. Contact</h2>
+  <p>Questions? Open an issue at <a href="https://github.com/null-byte00/gardelycode-community/issues">github.com/null-byte00/gardelycode-community</a>.</p>
+</main>
+</body>
+</html>

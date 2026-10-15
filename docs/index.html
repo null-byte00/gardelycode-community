@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GardelyCode — Free AI vibecoding IDE for Windows</title>
+<meta name="description" content="Describe what you want. Gardely writes the code, runs it and shows you the result — free, no API keys. A tiny AI vibecoding IDE for Windows, in English and Russian.">
+<meta name="theme-color" content="#0b100d">
+<link rel="canonical" href="https://gardelycode.com/">
+<link rel="alternate" hreflang="en" href="https://gardelycode.com/">
+<link rel="alternate" hreflang="ru" href="https://gardelycode.com/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://gardelycode.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GardelyCode">
+<meta property="og:title" content="GardelyCode — Grow your app.">
+<meta property="og:description" content="Describe it. Gardely builds it, runs it, and shows you the result — free, no API keys. Windows 10/11.">
+<meta property="og:url" content="https://gardelycode.com/">
+<meta property="og:image" content="https://gardelycode.com/assets/app.png">
+<meta property="og:image:width" content="1440">
+<meta property="og:image:height" content="900">
+<meta property="og:image:alt" content="GardelyCode window: conversation with the Gardely agent, live preview of a coffee-shop site, and the code editor.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GardelyCode — Grow your app.">
+<meta name="twitter:description" content="Describe it. Gardely builds it, runs it, and shows you the result — free, no API keys.">
+<meta name="twitter:image" content="https://gardelycode.com/assets/app.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "GardelyCode",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "DeveloperApplication",
+  "description": "A free AI vibecoding IDE for Windows. Describe what you want; the Gardely agent writes, edits and runs the code with a live preview. No API keys.",
+  "url": "https://gardelycode.com/",
+  "downloadUrl": "https://github.com/null-byte00/gardelycode-community/releases/latest",
+  "image": "https://gardelycode.com/assets/app.png",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "inLanguage": ["en", "ru"]
+}
+</script>
+
+<script>
+/* Theme + language before first paint. URL flags: ?theme=light|dark  ?lang=en|ru */
+(function () {
+  var d = document.documentElement, q = new URLSearchParams(location.search);
+  function g(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  var t = q.get('theme') || g('gc-theme');
+  if (t !== 'light' && t !== 'dark') t = 'dark';
+  d.setAttribute('data-theme', t);
+  var l = q.get('lang') || g('gc-lang');
+  if (!l) { l = 'en'; } // English first; Russian only on request
+  d.setAttribute('lang', l === 'ru' ? 'ru' : 'en');
+  d.className += ' js';
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-sprout" viewBox="0 0 32 32"><path d="M16 27V14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M16 19c0-5-3.5-8.5-9-8.5 0 5.5 3.5 8.5 9 8.5z" fill="currentColor"/><path d="M16 15c0-5.5 3.8-9.5 9.5-9.5 0 6-3.8 9.5-9.5 9.5z" fill="currentColor"/></symbol>
+    <symbol id="i-download" viewBox="0 0 16 16"><path d="M8 2.5v8M4.5 7l3.5 3.5L11.5 7M3 13.5h10"/></symbol>
+    <symbol id="i-play" viewBox="0 0 16 16"><path d="M5 3.5v9l7-4.5z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 16 16"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 16 16"><path d="M13.5 9.6A6 6 0 0 1 6.4 2.5a6 6 0 1 0 7.1 7.1z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7"/></symbol>
+    <symbol id="i-chev-d" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4"/></symbol>
+    <symbol id="i-send" viewBox="0 0 16 16"><path d="M8 13V3M4 7l4-4 4 4"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 16 16"><path d="M3.5 14V2.5M3.5 3h8l-2 3 2 3h-8"/></symbol>
+    <symbol id="i-restore" viewBox="0 0 16 16"><path d="M2.5 8a5.5 5.5 0 1 0 1.6-3.9M2.5 2.5v3h3M8 5v3l2 1.5"/></symbol>
+    <symbol id="i-file" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1zM9 2.5v3h3"/></symbol>
+    <symbol id="i-key-off" viewBox="0 0 16 16"><circle cx="4.5" cy="8" r="2.5"/><path d="M7 8h7M11.5 8v2.5M14 8v2M2.5 13.5l11-11"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 16 16"><path d="M8 2.5l6 3-6 3-6-3zM2 8.5l6 3 6-3M2 11.5l6 3 6-3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 16 16"><path d="M8 1.8l5 2v4.2c0 3-2.2 5.2-5 6.2-2.8-1-5-3.2-5-6.2V3.8zM5.8 8l1.6 1.6 3-3"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 16 16"><path d="M5.5 2v3M10.5 2v3M3.5 5h9v2.5a4.5 4.5 0 0 1-9 0zM8 12v2.5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 16 16"><path d="M8 2l1.6 4.4L14 8l-4.4 1.6L8 14l-1.6-4.4L2 8l4.4-1.6z"/></symbol>
+    <symbol id="i-panes" viewBox="0 0 16 16"><rect x="2" y="2.5" width="12" height="11" rx="2"/><path d="M6.5 2.5v11M10.5 2.5v11"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c2 2 2 10 0 12M8 2c-2 2-2 10 0 12"/></symbol>
+    <symbol id="i-feather" viewBox="0 0 16 16"><path d="M13.5 2.5c-6 0-10 3.5-10 8.5 0 .7.1 1.4.3 2 5.5 0 9.7-4 9.7-10.5z"/><path d="M3.8 13c2-3.5 4.5-6 8-8"/></symbol>
+    <symbol id="i-external" viewBox="0 0 16 16"><path d="M7 3H3.5a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V9M9.5 2.5h4v4M13.5 2.5L7 9"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21 4L3 11l6.5 2.2L12 20l3-5 6-11z"/><path d="M9.5 13.2L21 4"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9.2v5.6l5-2.8z" fill="currentColor"/></symbol>
+    <symbol id="i-close" viewBox="0 0 16 16"><path d="M4 4l8 8M12 4l-8 8"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 16 16"><path d="M11.5 2.5l2 2L6 12l-3 1 1-3z"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 16 16"><path d="M1.5 8s2.5-4.5 6.5-4.5S14.5 8 14.5 8s-2.5 4.5-6.5 4.5S1.5 8 1.5 8z"/><circle cx="8" cy="8" r="2"/></symbol>
+    <symbol id="i-term" viewBox="0 0 16 16"><path d="M3 4l4 4-4 4M8.5 12H13"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="site-head">
+  <div class="container head-in">
+    <a class="brand" href="#top" aria-label="GardelyCode">
+      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="var(--acc)"/><g style="color:var(--acc-ink)"><use href="#i-sprout"/></g></svg>
+      <span class="wordmark">Gardely<em>Code</em></span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#demo" data-i18n="nav.demo">Demo</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#open" data-i18n="nav.open">Open source</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="head-tools">
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a class="icon-btn" href="https://github.com/null-byte00/gardelycode-community" aria-label="GitHub" title="GitHub" rel="noopener"><svg class="ic"><use href="#i-github"/></svg></a>
+      <button type="button" class="icon-btn" id="themeBtn" aria-label="Switch theme" data-i18n-aria="theme">
+        <svg class="ic ico-moon"><use href="#i-moon"/></svg>
+        <svg class="ic ico-sun"><use href="#i-sun"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm head-dl" href="thanks.html?src=site">
+        <svg class="ic"><use href="#i-download"/></svg><span data-i18n="nav.download">Download</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="container">
+    <p class="pill land" style="--d:0ms"><span class="dot"></span><span data-i18n="hero.pill">Free AI vibecoding IDE · Windows</span></p>
+    <h1 class="land" style="--d:80ms" data-i18n-html="hero.h1">Grow your <em>app.</em></h1>
+    <p class="sub land" style="--d:160ms" data-i18n="hero.sub">Describe it. Gardely builds it, runs it, and shows you the result — free, no API keys.</p>
+    <div class="cta-row land" style="--d:240ms">
+      <a class="btn btn-primary btn-lg" href="thanks.html?src=site">
+        <svg class="ic"><use href="#i-download"/></svg><span data-i18n="hero.cta">Download for Windows</span>
+      </a>
+      <a class="btn btn-ghost btn-lg" href="#demo">
+        <svg class="ic"><use href="#i-play"/></svg><span data-i18n="hero.cta2">Watch it build</span>
+      </a>
+    </div>
+    <p class="cta-note land" style="--d:320ms" data-i18n="hero.note">Free · Windows 10/11</p>
+
+    <div class="hero-visual land" style="--d:420ms">
+      <div class="frame">
+        <span class="live-tag"><span class="dot"></span><span data-i18n="hero.live">Live preview</span></span>
+        <img src="assets/app.png" width="1440" height="900" alt="GardelyCode window: on the left a conversation with the Gardely agent showing edited files with Accept and Reject buttons, in the middle a live preview of a coffee-shop website, on the right the file tree, a diff in the code editor and a terminal." data-i18n-alt="hero.alt" fetchpriority="high">
+      </div>
+
+      <div class="composer" aria-hidden="true">
+        <div class="composer-text"><span class="typed" data-i18n="hero.prompt">Make me a landing page for my coffee shop with a booking form</span><span class="caret"></span></div>
+        <div class="composer-bar">
+          <span class="modes"><span data-i18n="mode.ask">Ask</span><span class="on" data-i18n="mode.agent">Agent</span><span data-i18n="mode.plan">Plan</span></span>
+          <span class="composer-right">
+            <span class="model"><svg class="ic xs sprout"><use href="#i-sprout"/></svg>Claude Opus 5.5<svg class="ic xs chev"><use href="#i-chev-d"/></svg></span>
+            <span class="send"><svg class="ic"><use href="#i-send"/></svg></span>
+          </span>
+        </div>
+        <div class="composer-status" data-state="typing">
+          <span class="st st-working">
+            <svg class="grow" viewBox="0 0 32 32"><path class="grow-soil" d="M6 28h20"/><g class="grow-plant"><path class="grow-stem" d="M16 28V13"/><path class="grow-leaf l1" d="M16 21c0-5-3.5-8.5-9-8.5 0 5.5 3.5 8.5 9 8.5z"/><path class="grow-leaf l2" d="M16 16c0-5.5 3.8-9.5 9.5-9.5 0 6-3.8 9.5-9.5 9.5z"/></g></svg>
+            <span data-i18n="hero.working">Gardely is working…</span>
+          </span>
+          <span class="st st-done"><svg class="ic s"><use href="#i-check"/></svg><span data-i18n="hero.done">Done · 3 files · Checkpoint 1</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEMO ================= -->
+<section class="section" id="demo">
+  <div class="container">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="demo.eyebrow">Demo</p>
+      <h2 data-i18n-html="demo.h2">From one sentence to a <em>running site.</em></h2>
+      <p data-i18n="demo.sub">One prompt, zero setup. This is the page Gardely built from it.</p>
+    </div>
+    <div class="stage rv">
+      <!-- Put a YouTube video id into data-youtube-id to replace the screenshot with the video. -->
+      <div class="device video" data-youtube-id="">
+        <img src="assets/agent-made-landing.png" width="1280" height="900" loading="lazy" alt="A finished coffee-shop landing page generated by Gardely: a warm brown hero with the shop name and a six-item menu with prices." data-i18n-alt="demo.alt">
+      </div>
+      <p class="cp"><svg class="ic s"><use href="#i-flag"/></svg><span data-i18n="demo.caption">Built by Gardely in under 2 minutes</span><span class="cp-sub" data-i18n="demo.caption2">a real, measured run — not a mock-up</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW ================= -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="how.eyebrow">How it works</p>
+      <h2 data-i18n-html="how.h2">Three steps. <em>No ceremony.</em></h2>
+    </div>
+    <ol class="steps">
+      <li class="step rv">
+        <span class="num">01</span>
+        <h3 data-i18n="how.1.t">Describe</h3>
+        <p data-i18n="how.1.p">Say what you want in plain words — English or Russian. Attach a screenshot if it helps.</p>
+        <div class="mock mock-compose" aria-hidden="true">
+          <div class="mc-chips"><span class="mc-chip"><svg class="ic xs"><use href="#i-file"/></svg>header-idea.png</span></div>
+          <div class="mc-text" data-i18n="how.1.mock">Add a dark mode toggle to the header</div>
+          <div class="mc-bar"><span class="modes"><span data-i18n="mode.ask">Ask</span><span class="on" data-i18n="mode.agent">Agent</span><span data-i18n="mode.plan">Plan</span></span><span class="send"><svg class="ic"><use href="#i-send"/></svg></span></div>
+          <div class="mc-hint"><span data-i18n="mock.hint">Opus 5.5 · free, no key</span><span data-i18n="mock.enter">Enter to send</span></div>
+        </div>
+      </li>
+      <li class="step rv" style="--d:100ms">
+        <span class="num">02</span>
+        <h3 data-i18n="how.2.t">Gardely builds</h3>
+        <p data-i18n="how.2.p">Files appear as it writes them. Every change arrives as a diff you can accept or reject — one click each.</p>
+        <div class="mock mock-files" aria-hidden="true">
+          <div class="fc pending"><svg class="ic s"><use href="#i-file"/></svg><span class="fc-name">index.html</span><span class="tag mod" data-i18n="mock.edited">edited</span><span class="counts"><b class="add">+12</b><b class="del">в€’3</b></span><span class="acts"><span class="b-accept"><svg class="ic xs"><use href="#i-check"/></svg><span data-i18n="mock.accept">Accept</span></span><span class="b-ghost" data-i18n="mock.reject">Reject</span></span></div>
+          <div class="fc"><svg class="ic s"><use href="#i-file"/></svg><span class="fc-name">styles.css</span><span class="tag mod" data-i18n="mock.edited">edited</span><span class="counts"><b class="add">+28</b><b class="del">в€’0</b></span><span class="acts"><span class="kept"><svg class="ic xs"><use href="#i-check"/></svg><span data-i18n="mock.kept">Kept</span></span></span></div>
+          <div class="fc"><svg class="ic s"><use href="#i-file"/></svg><span class="fc-name">theme.js</span><span class="tag" data-i18n="mock.new">new</span><span class="counts"><b class="add">+19</b></span><span class="acts"><span class="kept"><svg class="ic xs"><use href="#i-check"/></svg><span data-i18n="mock.kept">Kept</span></span></span></div>
+        </div>
+      </li>
+      <li class="step rv" style="--d:200ms">
+        <span class="num">03</span>
+        <h3 data-i18n="how.3.t">See it live — keep growing</h3>
+        <p data-i18n="how.3.p">The Stage shows your app running the moment it's ready. Every step is a checkpoint: one click on “Restore to here” and you're back.</p>
+        <div class="mock mock-stage" aria-hidden="true">
+          <div class="ms-page">
+            <div class="ms-bar"><span class="ms-brand"></span><span class="ms-toggle"></span></div>
+            <div class="ms-h"></div><div class="ms-p"></div><div class="ms-p short"></div>
+            <div class="ms-btn"></div>
+          </div>
+          <div class="cp mini"><svg class="ic xs"><use href="#i-flag"/></svg><span data-i18n="mock.cp">Checkpoint 2</span><span class="cp-btn"><svg class="ic xs"><use href="#i-restore"/></svg><span data-i18n="mock.restore">Restore to here</span></span></div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="feat.eyebrow">Features</p>
+      <h2 data-i18n-html="feat.h2">Everything you need. <em>Nothing to configure.</em></h2>
+    </div>
+    <div class="grid feats">
+      <article class="card rv"><span class="tile"><svg class="ic"><use href="#i-key-off"/></svg></span><h3 data-i18n="feat.1.t">No API keys. No card.</h3><p data-i18n="feat.1.p">Free models are built in. Install, open, start describing — that is the whole setup.</p></article>
+      <article class="card rv" style="--d:60ms"><span class="tile"><svg class="ic"><use href="#i-layers"/></svg></span><h3 data-i18n="feat.2.t">The model family</h3><p data-i18n="feat.2.p">Pick the model that fits the job: Opus for big features, Fable for design, Sonnet for everyday coding, Haiku for instant edits.</p><ul class="chips"><li class="chip on">Opus</li><li class="chip">Fable</li><li class="chip">Sonnet</li><li class="chip">Haiku</li></ul></article>
+      <article class="card rv" style="--d:120ms"><span class="tile"><svg class="ic"><use href="#i-shield"/></svg></span><h3 data-i18n="feat.3.t">Permission modes</h3><p data-i18n="feat.3.p">You decide how much Gardely does on its own — from asking before every edit to running everything.</p><ul class="chips"><li class="chip on" data-i18n="pm.auto">Auto</li><li class="chip" data-i18n="pm.ask">Ask every time</li><li class="chip" data-i18n="pm.accept">Accept edits</li><li class="chip" data-i18n="pm.plan">Plan</li><li class="chip" data-i18n="pm.full">Full access</li></ul></article>
+      <article class="card rv"><span class="tile"><svg class="ic"><use href="#i-restore"/></svg></span><h3 data-i18n="feat.4.t">Checkpoints &amp; one-click restore</h3><p data-i18n="feat.4.p">Every turn is saved. Didn't like where it went? Restore to any point and try another way.</p></article>
+      <article class="card rv" style="--d:60ms"><span class="tile"><svg class="ic"><use href="#i-plug"/></svg></span><h3 data-i18n="feat.5.t">MCP servers</h3><p data-i18n="feat.5.p">Connect tools over MCP. Configs from other editors work as they are — nothing to rewrite.</p></article>
+      <article class="card rv" style="--d:120ms"><span class="tile"><svg class="ic"><use href="#i-spark"/></svg></span><h3 data-i18n="feat.6.t">Skills &amp; project rules</h3><p data-i18n-html="feat.6.p">Teach Gardely your way with <code>SKILL.md</code> playbooks, and keep the project's conventions in <code>AGENTS.md</code>.</p></article>
+      <article class="card rv"><span class="tile"><svg class="ic"><use href="#i-panes"/></svg></span><h3 data-i18n="feat.7.t">Stage, terminal, editor</h3><p data-i18n="feat.7.p">Live preview, a real terminal and a code editor — side by side, in one window.</p></article>
+      <article class="card rv" style="--d:60ms"><span class="tile"><svg class="ic"><use href="#i-globe"/></svg></span><h3 data-i18n="feat.8.t">English &amp; Russian</h3><p data-i18n="feat.8.p">The whole interface — and Gardely itself — speaks both. Switch any time.</p></article>
+      <article class="card rv" style="--d:120ms"><span class="tile"><svg class="ic"><use href="#i-feather"/></svg></span><h3 data-i18n="feat.9.t">Tiny and fast</h3><p data-i18n="feat.9.p">A native Rust core. Light on memory, quick to start — even on a modest laptop.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="gal.eyebrow">Screenshots</p>
+      <h2 data-i18n-html="gal.h2">A calm place <em>to build.</em></h2>
+    </div>
+  </div>
+  <div class="container gallery-wrap">
+    <ul class="gallery rv">
+      <li><figure class="shot"><button type="button" class="shot-btn" data-i18n-aria="gal.open" aria-label="Open full size"><img src="assets/app.png" width="1440" height="900" loading="lazy" alt="GardelyCode in the default dark theme." data-i18n-alt="gal.1.alt"></button><figcaption data-i18n="gal.1">Forest night — the default dark theme</figcaption></figure></li>
+      <li><figure class="shot"><button type="button" class="shot-btn" data-i18n-aria="gal.open" aria-label="Open full size"><img src="assets/app-light.png" width="1440" height="900" loading="lazy" alt="GardelyCode in the light theme." data-i18n-alt="gal.2.alt"></button><figcaption data-i18n="gal.2">Greenhouse daylight — the light theme</figcaption></figure></li>
+      <li><figure class="shot"><button type="button" class="shot-btn" data-i18n-aria="gal.open" aria-label="Open full size"><img src="assets/app-ru.png" width="1440" height="900" loading="lazy" alt="GardelyCode with the Russian interface." data-i18n-alt="gal.3.alt"></button><figcaption data-i18n="gal.3">The Russian interface</figcaption></figure></li>
+      <li><figure class="shot"><button type="button" class="shot-btn" data-i18n-aria="gal.open" aria-label="Open full size"><img src="assets/app-model.png" width="1440" height="900" loading="lazy" alt="The model picker listing Claude Opus 5.5, Claude Fable 5.1, Claude Sonnet 5.5 and Claude Haiku 5.5, with Presto and Adagio toggles." data-i18n-alt="gal.4.alt"></button><figcaption data-i18n="gal.4">Model picker — Opus, Fable, Sonnet, Haiku</figcaption></figure></li>
+      <li><figure class="shot"><button type="button" class="shot-btn" data-i18n-aria="gal.open" aria-label="Open full size"><img src="assets/app-mode.png" width="1440" height="900" loading="lazy" alt="The permissions menu: Auto, Ask every time, Accept edits, Plan, Full access." data-i18n-alt="gal.5.alt"></button><figcaption data-i18n="gal.5">Permission modes — from “Ask every time” to “Full access”</figcaption></figure></li>
+      <li><figure class="shot"><button type="button" class="shot-btn" data-i18n-aria="gal.open" aria-label="Open full size"><img src="assets/app-working.png" width="1440" height="900" loading="lazy" alt="Gardely working: a list of steps taken and a note that the free model is taking a short breather." data-i18n-alt="gal.6.alt"></button><figcaption data-i18n="gal.6">Gardely at work — steps, plain-words summary, a short breather when free models are busy</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= OPEN ================= -->
+<section class="section" id="open">
+  <div class="container">
+    <div class="open-card rv">
+      <div class="open-text">
+        <p class="eyebrow" data-i18n="open.eyebrow">Open source</p>
+        <h2 data-i18n-html="open.h2">Open where <em>it matters.</em></h2>
+        <p data-i18n="open.p1">The workspace modules — files, search, terminal, live preview — plus the skills and project templates are open on GitHub. Read them, fork them, send a pull request.</p>
+        <p data-i18n="open.p2">The core — the Gardely agent, the AI models and the interface — is ours and stays proprietary. That is what keeps the app free and the models keyless.</p>
+        <a class="btn btn-ghost" href="https://github.com/null-byte00/gardelycode-community"><svg class="ic"><use href="#i-github"/></svg><span data-i18n="open.cta">View on GitHub</span><svg class="ic xs"><use href="#i-external"/></svg></a>
+      </div>
+      <div class="open-lists">
+        <div class="olist">
+          <h3><svg class="ic s"><use href="#i-github"/></svg><span data-i18n="open.l1">Open on GitHub</span></h3>
+          <ul>
+            <li data-i18n="open.l1.1">Workspace: files · search · terminal · preview</li>
+            <li data-i18n="open.l1.2">Agent Skills (SKILL.md)</li>
+            <li data-i18n="open.l1.3">Project templates</li>
+          </ul>
+        </div>
+        <div class="olist core">
+          <h3><svg class="ic s" style="fill:currentColor"><use href="#i-sprout"/></svg><span data-i18n="open.l2">Our core</span></h3>
+          <ul>
+            <li data-i18n="open.l2.1">The Gardely agent</li>
+            <li data-i18n="open.l2.2">AI models</li>
+            <li data-i18n="open.l2.3">The interface</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq">
+  <div class="container faq-grid">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+      <h2 data-i18n-html="faq.h2">Fair <em>questions.</em></h2>
+    </div>
+    <div class="faq rv">
+      <details open>
+        <summary><span data-i18n="faq.1.q">Is it really free?</span><svg class="ic chev"><use href="#i-chev-d"/></svg></summary>
+        <div class="faq-a"><p data-i18n="faq.1.a">Yes. GardelyCode is free to download and use. The built-in models come from free providers with fair-use limits — when a model is busy, Gardely waits a few seconds and carries on. No trial, no card.</p></div>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.2.q">Do I need an API key?</span><svg class="ic chev"><use href="#i-chev-d"/></svg></summary>
+        <div class="faq-a"><p data-i18n="faq.2.a">No. Nothing to sign up for, nothing to paste. Install and start describing.</p></div>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.3.q">Which AI is inside?</span><svg class="ic chev"><use href="#i-chev-d"/></svg></summary>
+        <div class="faq-a"><p data-i18n="faq.3.a">GardelyCode runs on top of leading open models through free providers. The models — Claude Opus, Fable, Sonnet, Haiku — are tuned for different kinds of work; Opus is the default.</p></div>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.4.q">Is my code private?</span><svg class="ic chev"><use href="#i-chev-d"/></svg></summary>
+        <div class="faq-a"><p data-i18n="faq.4.a">Here is the honest version: to generate answers, your prompts and the code you are working on are sent to the AI providers. So don't paste secrets, keys or passwords into the chat. Everything else — your project files, your terminal — stays on your PC.</p></div>
+      </details>
+      <details>
+        <summary><span data-i18n="faq.5.q">Mac or Linux?</span><svg class="ic chev"><use href="#i-chev-d"/></svg></summary>
+        <div class="faq-a"><p data-i18n="faq.5.a">Windows first. Mac and Linux builds are planned — follow the Telegram channel to hear when they land.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMMUNITY ================= -->
+<section class="section" id="community">
+  <div class="container">
+    <div class="sec-head rv">
+      <p class="eyebrow" data-i18n="com.eyebrow">Community</p>
+      <h2 data-i18n-html="com.h2">Watch it <em>grow.</em></h2>
+      <p data-i18n="com.sub">New builds, short demos and the roadmap — on Telegram and YouTube.</p>
+    </div>
+    <div class="social rv">
+      <a class="social-card" href="https://t.me/GardelyCode" rel="noopener">
+        <svg class="ic lg"><use href="#i-telegram"/></svg>
+        <span><b data-i18n="com.tg">Telegram channel</b><small data-i18n="com.tg.s">Builds, notes, questions answered</small></span>
+      </a>
+      <a class="social-card" href="https://youtube.com/" data-todo="link" rel="noopener">
+        <svg class="ic lg"><use href="#i-youtube"/></svg>
+        <span><b data-i18n="com.yt">YouTube</b><small data-i18n="com.yt.s">Watch Gardely build things, start to finish</small></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="section final">
+  <div class="container">
+    <div class="final-card rv">
+      <svg class="final-sprout" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-sprout"/></svg>
+      <h2 data-i18n-html="final.h2">Ready to grow <em>something?</em></h2>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="thanks.html?src=site"><svg class="ic"><use href="#i-download"/></svg><span data-i18n="hero.cta">Download for Windows</span></a>
+      </div>
+      <p class="cta-note" data-i18n="hero.note">Free · Windows 10/11</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="container foot-in">
+    <p data-i18n="foot.copy">© 2026 GardelyCode. Made for people who build with words.</p>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="https://github.com/null-byte00/gardelycode-community">GitHub</a>
+      <a href="https://t.me/GardelyCode">Telegram</a>
+      <a href="https://github.com/null-byte00/gardelycode-community/releases/latest" data-i18n="foot.releases">Releases</a> · <a href="privacy.html">Privacy</a>
+      <a href="#top" data-i18n="foot.top">Back to top</a>
+    </nav>
+  </div>
+</footer>
+
+<dialog class="lb" id="lightbox" aria-label="Screenshot">
+  <button type="button" class="lb-close icon-btn" data-i18n-aria="lb.close" aria-label="Close"><svg class="ic"><use href="#i-close"/></svg></button>
+  <img src="" alt="">
+</dialog>
+
+<script src="main.js"></script>
+<script>(function(){try{var q=new URLSearchParams(location.search);var r=q.get('ref');if(r)sessionStorage.setItem('gc-ref',r.replace(/[^a-z0-9_-]/gi,'').slice(0,16));var s=q.get('src');if(s)document.querySelectorAll('a[href^="thanks.html"]').forEach(function(a){a.href='thanks.html?src='+encodeURIComponent(s.replace(/[^a-z0-9_-]/gi,'').slice(0,24));});}catch(e){}})();</script>
+</body>
+</html>
+
