@@ -10,6 +10,7 @@
 Бесплатный ИИ для создания программ на Windows — без API-ключей, подписок и настройки.
 
 [**⬇ Скачать для Windows**](https://github.com/null-byte00/gardelycode-community/releases/latest) &nbsp;·&nbsp;
+[**▶ Тур по приложению (3 мин, EN)**](https://youtu.be/Ekp5OMovWvM) &nbsp;·&nbsp;
 [Сайт](https://gardelycode.com/) &nbsp;·&nbsp;
 [English](README.md)
 
@@ -67,7 +68,7 @@ GardelyCode — программа для **вайбкодинга**: ты пи�
 
 ## Сообщество
 
-- 📺 YouTube — *скоро*
+- 📺 YouTube — [тур по GardelyCode за 3 минуты (EN)](https://youtu.be/Ekp5OMovWvM)
 - Telegram — [t.me/GardelyCode](https://t.me/GardelyCode)
 - 🐞 Нашёл баг? [Создай issue](https://github.com/null-byte00/gardelycode-community/issues).
 

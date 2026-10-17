@@ -10,6 +10,7 @@
 Free AI coding app for Windows — no API keys, no subscriptions, no setup.
 
 [**⬇ Download for Windows**](https://github.com/null-byte00/gardelycode-community/releases/latest) &nbsp;·&nbsp;
+[**▶ Watch the tour (3 min)**](https://youtu.be/Ekp5OMovWvM) &nbsp;·&nbsp;
 [Website](https://gardelycode.com/) &nbsp;·&nbsp;
 [Русский](README.ru.md)
 
@@ -92,7 +93,7 @@ The GardelyCode core — the agent, the Gardely AI model service and the interfa
 
 ## Community
 
-- 📺 YouTube — *coming soon*
+- 📺 YouTube — [GardelyCode tour in 3 minutes](https://youtu.be/Ekp5OMovWvM)
 - Telegram — [t.me/GardelyCode](https://t.me/GardelyCode)
 - 🐞 Found a bug? [Open an issue](https://github.com/null-byte00/gardelycode-community/issues).
 
