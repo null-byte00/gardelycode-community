@@ -69,6 +69,7 @@ GardelyCode — программа для **вайбкодинга**: ты пи�
 ## Сообщество
 
 - 📺 YouTube — [тур по GardelyCode за 3 минуты (EN)](https://youtu.be/Ekp5OMovWvM)
+- TikTok — [@gardelycode](https://www.tiktok.com/@gardelycode)
 - Telegram — [t.me/GardelyCode](https://t.me/GardelyCode)
 - 🐞 Нашёл баг? [Создай issue](https://github.com/null-byte00/gardelycode-community/issues).
 

@@ -94,6 +94,7 @@ The GardelyCode core — the agent, the Gardely AI model service and the interfa
 ## Community
 
 - 📺 YouTube — [GardelyCode tour in 3 minutes](https://youtu.be/Ekp5OMovWvM)
+- TikTok — [@gardelycode](https://www.tiktok.com/@gardelycode)
 - Telegram — [t.me/GardelyCode](https://t.me/GardelyCode)
 - 🐞 Found a bug? [Open an issue](https://github.com/null-byte00/gardelycode-community/issues).
 
