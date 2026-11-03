@@ -1,0 +1,10 @@
+# Local review screenshots of the website
+site-shots/
+
+# Rust
+target/
+Cargo.lock
+
+# OS
+Thumbs.db
+.DS_Store
